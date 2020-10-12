@@ -1,0 +1,493 @@
+{
+  "Classrooms": {
+    "a": ["Atelje"],
+    "k": ["Kolarac"],
+    "n": ["U1", "U8"],
+    "r": ["U3", "U4", "U5", "U7"],
+    "s": ["Studio"]
+  },
+  "Classes": [{
+    "Subject": "Test Subject 1",
+    "Type": "Theory",
+    "Professor": "Vujosevic Dusan",
+    "Groups": ["301", "302", "303", "304", "305", "306", "307", "308", "309", "309a"],
+    "AllowedClassrooms": "n",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 2",
+    "Type": "Theory",
+    "Professor": "Vujosevic Dusan",
+    "Groups": ["301", "302", "303", "304", "305", "306", "307", "308", "309", "309a", "2s1", "2s2"],
+    "AllowedClassrooms": "k",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 3",
+    "Type": "Theory",
+    "Professor": "Ilic Nemanja",
+    "Groups": ["301", "302", "306", "308"],
+    "AllowedClassrooms": "n",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 2",
+    "Type": "Practical",
+    "Professor": "Radosavljevic Nemanja",
+    "Groups": ["301", "303", "304", "305"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 4",
+    "Type": "Theory",
+    "Professor": "Vidakovic MIlan",
+    "Groups": ["301", "303", "304", "307", "308", "309", "314", "319", "322"],
+    "AllowedClassrooms": "n",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 4",
+    "Type": "Practical",
+    "Professor": "Gavrilovic Vuk",
+    "Groups": ["301", "303", "304", "307", "322"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 1",
+    "Type": "Practical",
+    "Professor": "Stankovic Ivana",
+    "Groups": ["301", "305", "308"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 5",
+    "Type": "Theory",
+    "Professor": "Dimic Surla Bojana",
+    "Groups": ["301", "307", "309a"],
+    "AllowedClassrooms": "n",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 5",
+    "Type": "Practical",
+    "Professor": "Radovic Mihailo",
+    "Groups": ["301", "307", "309a"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 3",
+    "Type": "Practical",
+    "Professor": "Jovanovic Nikola",
+    "Groups": ["301", "308", "302", "306"],
+    "AllowedClassrooms": "n",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 6",
+    "Type": "Practical",
+    "Professor": "Tomic Milan",
+    "Groups": ["302", "303"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 1",
+    "Type": "Practical",
+    "Professor": "Stankovic Ivana",
+    "Groups": ["302", "303", "304"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 6",
+    "Type": "Theory",
+    "Professor": "Vasiljevic Jelena",
+    "Groups": ["302", "303", "305", "306", "309", "309a"],
+    "AllowedClassrooms": "n",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 7",
+    "Type": "Theory",
+    "Professor": "Dimic Surla Bojana",
+    "Groups": ["302", "304", "309"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 7",
+    "Type": "Practical",
+    "Professor": "Ciganovic Igor",
+    "Groups": ["302", "304", "309"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 2",
+    "Type": "Practical",
+    "Professor": "Radosavljevic Nemanja",
+    "Groups": ["302", "307", "306"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 8",
+    "Type": "Theory",
+    "Professor": "Zirojevic Nemanja",
+    "Groups": ["303", "304", "305", "306", "307", "308", "313", "314"],
+    "AllowedClassrooms": "n",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 8",
+    "Type": "Practical",
+    "Professor": "Kojadinovic Dragoljub",
+    "Groups": ["303", "304", "305", "306", "307", "308", "313", "314"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 9",
+    "Type": "Theory",
+    "Professor": "Jankovic Radomir",
+    "Groups": ["305", "319", "323", "309a", "324"],
+    "AllowedClassrooms": "n",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 1",
+    "Type": "Practical",
+    "Professor": "Stankovic Ivana",
+    "Groups": ["306", "307", "309", "309a"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 2",
+    "Type": "Practical",
+    "Professor": "Radosavljevic Nemanja",
+    "Groups": ["308", "309", "309a"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 4",
+    "Type": "Practical",
+    "Professor": "Gavrilovic Vuk",
+    "Groups": ["308", "309", "314", "319"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 6",
+    "Type": "Practical",
+    "Professor": "Tomic Milan",
+    "Groups": ["309", "309a", "305", "306"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 9",
+    "Type": "Practical",
+    "Professor": "Jankovic Radomir",
+    "Groups": ["309a", "324", "305"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 10",
+    "Type": "Theory",
+    "Professor": "Babic Djorde",
+    "Groups": ["313", "314", "319", "323", "324", "322"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 10",
+    "Type": "Practical",
+    "Professor": "Bojovic Petar",
+    "Groups": ["313", "314", "319", "323", "324", "322"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 11",
+    "Type": "Theory",
+    "Professor": "Vukotic Selena",
+    "Groups": ["313", "314", "319", "323", "324", "322"],
+    "AllowedClassrooms": "r",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 11",
+    "Type": "Practical",
+    "Professor": "Vukotic Selena",
+    "Groups": ["313", "314", "319", "323", "324", "322"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 12",
+    "Type": "Theory",
+    "Professor": "Vucic Desimir",
+    "Groups": ["313", "314", "319", "323", "324", "322"],
+    "AllowedClassrooms": "n",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 12",
+    "Type": "Practical",
+    "Professor": "Jovanovic Miljana",
+    "Groups": ["313", "314", "319", "323", "324", "322"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 13",
+    "Type": "Theory",
+    "Professor": "Jovanovic Milos",
+    "Groups": ["313", "323"],
+    "AllowedClassrooms": "n",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 13",
+    "Type": "Practical",
+    "Professor": "Jovanovic Miljana",
+    "Groups": ["313", "323"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 9",
+    "Type": "Practical",
+    "Professor": "Jankovic Radomir",
+    "Groups": ["319", "323"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 14",
+    "Type": "Theory",
+    "Professor": "Martic Goran",
+    "Groups": ["324", "322"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 14",
+    "Type": "Practical",
+    "Professor": "Martic Goran",
+    "Groups": ["324", "322"],
+    "AllowedClassrooms": "r",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 15",
+    "Type": "Theory",
+    "Professor": "Malesevic Nenad",
+    "Groups": ["3d1"],
+    "AllowedClassrooms": "n",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 15",
+    "Type": "Practical",
+    "Professor": "Malesevic Nenad",
+    "Groups": ["3d1"],
+    "AllowedClassrooms": "a",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 16",
+    "Type": "Theory",
+    "Professor": "Ognjanovic Ivana",
+    "Groups": ["3d1"],
+    "AllowedClassrooms": "s",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 16",
+    "Type": "Practical",
+    "Professor": "Ognjanovic Ivana",
+    "Groups": ["3d1"],
+    "AllowedClassrooms": "s",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 17",
+    "Type": "Theory",
+    "Professor": "Djuric Milan",
+    "Groups": ["3d1"],
+    "AllowedClassrooms": "n",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 17",
+    "Type": "Practical",
+    "Professor": "Djuric Milan",
+    "Groups": ["3d1"],
+    "AllowedClassrooms": "n",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 18",
+    "Type": "Theory",
+    "Professor": "Stetin Darko",
+    "Groups": ["3d1"],
+    "AllowedClassrooms": "a",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 18",
+    "Type": "Practical",
+    "Professor": "Stetin Darko",
+    "Groups": ["3d1"],
+    "AllowedClassrooms": "n",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 19",
+    "Type": "Theory",
+    "Professor": "Lale Sinisa",
+    "Groups": ["3s1"],
+    "AllowedClassrooms": "r",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 19",
+    "Type": "Theory",
+    "Professor": "Lale Sinisa",
+    "Groups": ["3s1"],
+    "AllowedClassrooms": "r",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 20",
+    "Type": "Theory",
+    "Professor": "Lale Sinisa",
+    "Groups": ["3s1"],
+    "AllowedClassrooms": "r",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 20",
+    "Type": "Theory",
+    "Professor": "Lale Sinisa",
+    "Groups": ["3s1"],
+    "AllowedClassrooms": "r",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 21",
+    "Type": "Theory",
+    "Professor": "Bojovic Petar",
+    "Groups": ["3s1"],
+    "AllowedClassrooms": "r",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 21",
+    "Type": "Practical",
+    "Professor": "Jankovski Ivan",
+    "Groups": ["3s1"],
+    "AllowedClassrooms": "r",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 22",
+    "Type": "Theory",
+    "Professor": "Zahorjanski Miroljub",
+    "Groups": ["3s1", "3s2"],
+    "AllowedClassrooms": "n",
+    "Length": "2"
+  }, {
+    "Subject": "Test Subject 23",
+    "Type": "Theory",
+    "Professor": "Miletic Misa",
+    "Groups": ["3s2"],
+    "AllowedClassrooms": "r",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 23",
+    "Type": "Practical",
+    "Professor": "Miletic Misa",
+    "Groups": ["3s2"],
+    "AllowedClassrooms": "r",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 24",
+    "Type": "Theory",
+    "Professor": "Markovic Nemanja",
+    "Groups": ["3s2"],
+    "AllowedClassrooms": "r",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 24",
+    "Type": "Theory",
+    "Professor": "Markovic Nemanja",
+    "Groups": ["3s2"],
+    "AllowedClassrooms": "r",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 25",
+    "Type": "Theory",
+    "Professor": "Milosavljevic Milos",
+    "Groups": ["3s2"],
+    "AllowedClassrooms": "r",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 25",
+    "Type": "Theory",
+    "Professor": "Milosavljevic Milos",
+    "Groups": ["3s2"],
+    "AllowedClassrooms": "r",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 26",
+    "Type": "Practical",
+    "Professor": "Milojkovic Branislav",
+    "Groups": ["401"],
+    "AllowedClassrooms": "r",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 27",
+    "Type": "Practical",
+    "Professor": "Markovic Ana",
+    "Groups": ["401"],
+    "AllowedClassrooms": "r",
+    "Length": "4"
+  }, {
+    "Subject": "Test Subject 27",
+    "Type": "Theory",
+    "Professor": "Perisic Branko",
+    "Groups": ["401", "402"],
+    "AllowedClassrooms": "n",
+    "Length": "4"
+  }, {
+    "Subject": "Test Subject 28",
+    "Type": "Theory",
+    "Professor": "Jovanovic Jelena",
+    "Groups": ["401", "402"],
+    "AllowedClassrooms": "n",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 28",
+    "Type": "Practical",
+    "Professor": "Tomic Milan",
+    "Groups": ["401", "402"],
+    "AllowedClassrooms": "n",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 26",
+    "Type": "Theory",
+    "Professor": "Milinkovic Stevan",
+    "Groups": ["401", "402", "405"],
+    "AllowedClassrooms": "n",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 26",
+    "Type": "Practical",
+    "Professor": "Milojkovic Branislav",
+    "Groups": ["402"],
+    "AllowedClassrooms": "r",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 27",
+    "Type": "Practical",
+    "Professor": "Markovic Ana",
+    "Groups": ["402"],
+    "AllowedClassrooms": "r",
+    "Length": "4"
+  }, {
+    "Subject": "Test Subject 26",
+    "Type": "Practical",
+    "Professor": "Milojkovic Branislav",
+    "Groups": ["405"],
+    "AllowedClassrooms": "r",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 29",
+    "Type": "Theory",
+    "Professor": "Babic Djorde",
+    "Groups": ["405"],
+    "AllowedClassrooms": "r",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 29",
+    "Type": "Practical",
+    "Professor": "Jovanovic Miljana",
+    "Groups": ["405"],
+    "AllowedClassrooms": "r",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 30",
+    "Type": "Theory",
+    "Professor": "Jovanovic Milos",
+    "Groups": ["405"],
+    "AllowedClassrooms": "r",
+    "Length": "3"
+  }, {
+    "Subject": "Test Subject 30",
+    "Type": "Practical",
+    "Professor": "Stambolovic Bogdana",
+    "Groups": ["405"],
+    "AllowedClassrooms": "r",
+    "Length": "3"
+  }]
+}
