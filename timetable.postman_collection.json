@@ -1,0 +1,48 @@
+{
+	"info": {
+		"_postman_id": "1a28d8de-c69f-4c1b-b826-d96289760466",
+		"name": "Timetable",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "generate",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				},
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"Classrooms\": {\n    \"halls\": [\"Hall 1\", \"Hall 2\", \"Hall 3\"],\n    \"classes\": [\"Class 1\", \"Class 2\"],\n    \"NLT\": [\"NLT 1\", \"NLT 2\", \"NLT 3\"]\n  },\n  \"Classes\": [{\n    \"Subject\": \"Test Subject 1\",\n    \"Type\": \"Theory\",\n    \"Professor\": \"Teacher 1\",\n    \"Groups\": [\"maths\", \"art\", \"biology\"],\n    \"AllowedClassrooms\": \"halls\",\n    \"Length\": \"2\"\n  }, {\n    \"Subject\": \"Test Subject 1\",\n    \"Type\": \"Theory\",\n    \"Professor\": \"Teacher 1\",\n    \"Groups\": [\"maths\", \"art\", \"biology\"],\n    \"AllowedClassrooms\": \"halls\",\n    \"Length\": \"3\"\n  }, {\n    \"Subject\": \"Test Subject 2\",\n    \"Type\": \"Theory\",\n    \"Professor\": \"Teacher 2\",\n    \"Groups\": [\"maths\", \"art\", \"biology\"],\n    \"AllowedClassrooms\": \"classes\",\n    \"Length\": \"1\"\n  }, {\n    \"Subject\": \"Test Subject 3\",\n    \"Type\": \"Theory\",\n    \"Professor\": \"Teacher 3\",\n    \"Groups\": [\"maths\", \"art\", \"biology\"],\n    \"AllowedClassrooms\": \"NLT\",\n    \"Length\": \"2\"\n  }]\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/generate/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"generate",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
