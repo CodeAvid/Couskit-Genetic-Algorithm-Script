@@ -2,10 +2,7 @@ import json
 import random
 
 
-def load_data(path):
-    with open(path, 'r') as read_file:
-        data = json.load(read_file)
-
+def load_data(data):
     for university_class in data['Classes']:
         classroom = university_class['AllowedClassrooms']
         university_class['AllowedClassrooms'] = data['Classrooms'][classroom]
