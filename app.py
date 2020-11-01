@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 
 def timetable_callback(timetable_data, api_url="http://127.0.0.1:5000"):
-    timetable = evolutionary_algorithm(timetable_data, 201)
+    timetable = evolutionary_algorithm(timetable_data)
     r = requests.get(api_url, json=timetable, headers={
         "Content-Type": "application/json"})
 
