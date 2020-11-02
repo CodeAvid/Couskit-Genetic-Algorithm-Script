@@ -7,7 +7,18 @@ app = Flask(__name__)
 
 
 def format_timetable(timetable):
-    return timetable
+    days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+    timetable_data = []
+    for d in timetable:
+        period = d
+        period["Length"] = int(period["Length"])
+        period["AssignedDay"] = days[period["AssignedTime"] // 9]
+        period["StartHour"] = (period["AssignedTime"] % 9) + 9
+        period["EndHour"] = period["StartHour"] + period["Length"]
+        period.pop("AssignedTime")
+        timetable_data.append(period)
+
+    return timetable_data
 
 
 def timetable_callback(timetable_data, api_url="https://tbe-node-deploy.herokuapp.com/timetable"):
@@ -15,6 +26,7 @@ def timetable_callback(timetable_data, api_url="https://tbe-node-deploy.herokuap
     timetable = format_timetable(timetable)
     r = requests.get(api_url, json=timetable, headers={
         "Content-Type": "application/json"})
+    print(timetable)
 
 
 @app.route("/")
