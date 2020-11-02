@@ -35,11 +35,11 @@ def generate_chromosome(data):
         classroom = random.choice(single_class['AllowedClassrooms'])
         day = random.randrange(0, 5)
         if day == 4:
-            period = random.randrange(0, 12 - int(single_class['Length']))
+            period = random.randrange(0, 9 - int(single_class['Length']))
         else:
-            period = random.randrange(0, 13 - int(single_class['Length']))
+            period = random.randrange(0, 10 - int(single_class['Length']))
         new_single_class['AssignedClassroom'] = classroom
-        time = 12 * day + period
+        time = 9 * day + period
         new_single_class['AssignedTime'] = time
 
         for i in range(time, time + int(single_class['Length'])):

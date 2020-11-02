@@ -6,8 +6,13 @@ from algorithm import evolutionary_algorithm
 app = Flask(__name__)
 
 
-def timetable_callback(timetable_data, api_url="http://127.0.0.1:5000"):
+def format_timetable(timetable):
+    return timetable
+
+
+def timetable_callback(timetable_data, api_url="https://tbe-node-deploy.herokuapp.com/timetable"):
     timetable = evolutionary_algorithm(timetable_data)
+    timetable = format_timetable(timetable)
     r = requests.get(api_url, json=timetable, headers={
         "Content-Type": "application/json"})
 
