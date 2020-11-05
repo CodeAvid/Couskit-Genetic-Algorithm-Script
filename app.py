@@ -37,6 +37,8 @@ def index():
 def generate():
     try:
         timetable_data = request.get_json()
+        if timetable_data == None:
+            raise Exception()
     except:
         return {"success": False, "message": "the timetable data is missing"}, 400
     if timetable_data.get("Classrooms") == None:
