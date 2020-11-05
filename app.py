@@ -35,7 +35,10 @@ def index():
 
 @app.route("/generate/")
 def generate():
-    timetable_data = request.get_json()
+    try:
+        timetable_data = request.get_json()
+    except:
+        return {"success": False, "message": "the timetable data is missing"}, 400
     if timetable_data.get("Classrooms") == None:
         return {"success": False, "message": "Classrooms variable is missing from the input"}, 400
     else:
