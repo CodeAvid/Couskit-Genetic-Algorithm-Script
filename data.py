@@ -2,16 +2,6 @@ import json
 import random
 
 
-def load_data(data):
-    for university_class in data['Classes']:
-        classroom = university_class['AllowedClassrooms']
-        university_class['AllowedClassrooms'] = data['Classrooms'][classroom]
-
-    data = data['Classes']
-
-    return data
-
-
 def generate_chromosome(data):
     professors = {}
     classrooms = {}

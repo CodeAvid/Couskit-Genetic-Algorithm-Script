@@ -8,7 +8,6 @@ def evolutionary_algorithm(data, max_generations=5001, num_runs=1):
     best_timetable = None
     cost_function = cost_functions.cost
     cost_function2 = cost_functions.cost2
-    data = dt.load_data(data)
     neighbour = mutation.neighbour
 
     for i in range(num_runs):

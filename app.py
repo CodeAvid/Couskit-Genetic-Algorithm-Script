@@ -9,20 +9,23 @@ app = Flask(__name__)
 def format_timetable(timetable):
     days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     timetable_data = []
-    for d in timetable:
-        period = d
-        period["Length"] = int(period["Length"])
-        period["AssignedDay"] = days[period["AssignedTime"] // 9]
-        period["StartHour"] = (period["AssignedTime"] % 9) + 9
-        period["EndHour"] = period["StartHour"] + period["Length"]
-        period.pop("AssignedTime")
-        timetable_data.append(period)
+    for period in timetable:
+        startHour = (period["AssignedTime"] % 9) + 9
+        d = {
+            "name": period["Subject"],
+            "lecturer": period["Professor"],
+            "type": "theory" if period["Type"] == "Theory" else "lab",
+            "assignedDay": days[period["AssignedTime"] // 9],
+            "startHour": startHour,
+            "venue": period["AssignedClassroom"],
+            "endHour": startHour + int(period["Length"])
+        }
+        timetable_data.append(d)
 
     return timetable_data
 
 
 def preformat_timetable(timetable):
-    new_timetable = {}
     classes = []
     for i, j in enumerate(timetable["courses"]):
         class_data = {
@@ -30,22 +33,30 @@ def preformat_timetable(timetable):
             "Type": "Theory" if j["type"] == "theory" else "Practical",
             "Professor": j["lecturer"],
             "Groups": [f"{i}"],
-            "AllowedClassrooms": f"{i}"
+            "AllowedClassrooms": [i for i in timetable["classroom"] if timetable["classroom"][i]["capacity"] >= j["students"]]
         }
         if j["unit"] in [1, 2]:
             class_data["Length"] = str(j["unit"])
             classes.append(class_data)
-    print(classes)
+        if j["unit"] == 3:
+            class_data["Length"] = "1"
+            classes.append(class_data)
+            class_data["Length"] = "2"
+            classes.append(class_data)
+        if j["unit"] == 4:
+            class_data["Length"] = "2"
+            classes.append(class_data)
+            class_data["Length"] = "2"
+            classes.append(class_data)
+    return classes
 
 
 def timetable_callback(timetable_data, api_url="https://tbe-node-deploy.herokuapp.com/timetable"):
-    timetable_data = preformat_timetable(timetable_data)
-    print(timetable_data)
-    return
+    timetable = preformat_timetable(timetable_data)
     timetable = evolutionary_algorithm(timetable)
     timetable = format_timetable(timetable)
-    # r = requests.get(api_url, json=timetable, headers={
-    #     "Content-Type": "application/json"})
+    r = requests.get(api_url, json=timetable, headers={
+                     "Content-Type": "application/json"})
 
 
 @app.route("/")
