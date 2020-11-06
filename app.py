@@ -21,11 +21,31 @@ def format_timetable(timetable):
     return timetable_data
 
 
+def preformat_timetable(timetable):
+    new_timetable = {}
+    classes = []
+    for i, j in enumerate(timetable["courses"]):
+        class_data = {
+            "Subject": j["name"],
+            "Type": "Theory" if j["type"] == "theory" else "Practical",
+            "Professor": j["lecturer"],
+            "Groups": [f"{i}"],
+            "AllowedClassrooms": f"{i}"
+        }
+        if j["unit"] in [1, 2]:
+            class_data["Length"] = str(j["unit"])
+            classes.append(class_data)
+    print(classes)
+
+
 def timetable_callback(timetable_data, api_url="https://tbe-node-deploy.herokuapp.com/timetable"):
-    timetable = evolutionary_algorithm(timetable_data)
+    timetable_data = preformat_timetable(timetable_data)
+    print(timetable_data)
+    return
+    timetable = evolutionary_algorithm(timetable)
     timetable = format_timetable(timetable)
-    r = requests.get(api_url, json=timetable, headers={
-        "Content-Type": "application/json"})
+    # r = requests.get(api_url, json=timetable, headers={
+    #     "Content-Type": "application/json"})
 
 
 @app.route("/")
