@@ -22,7 +22,7 @@ def format_timetable(timetable):
         }
         timetable_data.append(d)
 
-    return timetable_data
+    return {"courses": timetable_data}
 
 
 def preformat_timetable(timetable):
