@@ -1,7 +1,7 @@
 import random
 
 
-def neighbour(chromosome):
+def neighbour(chromosome, days=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]):
     """
     Returns a mutated chromosome. The mutation is done by searching for all classes that violate some hard constraint
     (with any resource) and randomly choosing one of them. Then, transfer that class in an unoccupied time frame, in
@@ -54,7 +54,7 @@ def neighbour(chromosome):
                 if c == length:
                     time = k + 1 - c
                     # Friday 8pm is reserved for free hour
-                    if k != 44:
+                    if k != (len(days) * 9) - 1:
                         pairs.append((time, classroom))
                         found = True
                     c = 0
@@ -63,9 +63,9 @@ def neighbour(chromosome):
     # Find a random time
     if not found:
         classroom = random.choice(chromosome[0][i]['AllowedClassrooms'])
-        day = random.randrange(0, 5)
+        day = random.randrange(0, len(days))
         # Friday 8pm is reserved for free hour
-        if day == 4:
+        if day == len(days) - 1:
             period = random.randrange(0, 9 - int(chromosome[0][i]['Length']))
         else:
             period = random.randrange(0, 10 - int(chromosome[0][i]['Length']))
@@ -91,7 +91,7 @@ def neighbour(chromosome):
     return chromosome
 
 
-def neighbour2(chromosome):
+def neighbour2(chromosome, days=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]):
     """
     Returns a mutated chromosome. pick two classes at random and swap their places and assigned times. Besides this,
     check if the two classes are compatible for swapping (if they use the same type of classrooms).
@@ -115,7 +115,7 @@ def neighbour2(chromosome):
         if first['AssignedClassroom'] in second['AllowedClassrooms'] and second['AssignedClassroom'] in first['AllowedClassrooms']\
                 and first['AssignedTime'] % 9 + int(second['Length']) <= 9 \
                 and second['AssignedTime'] % 9 + int(first['Length']) <= 9:
-            if first['AssignedTime'] + int(second['Length']) != 45 and second['AssignedTime'] + int(first['Length']) != 45\
+            if first['AssignedTime'] + int(second['Length']) != (len(days) * 9) and second['AssignedTime'] + int(first['Length']) != (len(days) * 9)\
                     and first != second:
                 satisfied = True
         c += 1

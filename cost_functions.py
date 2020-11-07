@@ -1,4 +1,4 @@
-def cost(chromosome):
+def cost(chromosome, days=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]):
     """
     Cost function for all hard constraints and soft constraint regarding preferred order. All parameters are empirical.
     :param chromosome: Timetable for which we are calculating the cost function.
@@ -47,7 +47,7 @@ def cost(chromosome):
     return prof_cost + classrooms_cost + groups_cost + round(subjects_cost, 4)
 
 
-def cost2(chromosome):
+def cost2(chromosome, days=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]):
     """
     Cost function for all hard constraints and all soft constraints. All parameters are empirical.
     :param chromosome: Timetable for which we are calculating the cost function.
@@ -63,7 +63,7 @@ def cost2(chromosome):
 
     # Calculating idleness and load for groups
     for group in chromosome[3]:
-        for day in range(5):
+        for day in range(len(days)):
             last_seen = 0
             found = False
             current_load = 0
@@ -81,7 +81,7 @@ def cost2(chromosome):
 
     # Calculating idleness and load for professors
     for prof in chromosome[1]:
-        for day in range(5):
+        for day in range(len(days)):
             last_seen = 0
             found = False
             current_load = 0

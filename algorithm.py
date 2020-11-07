@@ -5,7 +5,7 @@ import mutation
 from copy import deepcopy
 
 
-def evolutionary_algorithm(data, api_url, max_generations=5001, num_runs=1):
+def evolutionary_algorithm(data, api_url, days, max_generations=5001, num_runs=1):
     best_timetable = None
     cost_function = cost_functions.cost
     cost_function2 = cost_functions.cost2

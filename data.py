@@ -2,7 +2,7 @@ import json
 import random
 
 
-def generate_chromosome(data):
+def generate_chromosome(data, days=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]):
     professors = {}
     classrooms = {}
     groups = {}
@@ -11,11 +11,11 @@ def generate_chromosome(data):
     new_data = []
 
     for single_class in data:
-        professors[single_class['Professor']] = [0] * 60
+        professors[single_class['Professor']] = [0] * (len(days) * 9)
         for classroom in single_class['AllowedClassrooms']:
-            classrooms[classroom] = [0] * 60
+            classrooms[classroom] = [0] * (len(days) * 9)
         for group in single_class['Groups']:
-            groups[group] = [0] * 60
+            groups[group] = [0] * (len(days) * 9)
         subjects[single_class['Subject']] = {
             'Theory': [], 'Practical': [], 'L': []}
 
@@ -23,8 +23,8 @@ def generate_chromosome(data):
         new_single_class = single_class.copy()
 
         classroom = random.choice(single_class['AllowedClassrooms'])
-        day = random.randrange(0, 5)
-        if day == 4:
+        day = random.randrange(0, len(days))
+        if day == len(days) - 1:
             period = random.randrange(0, 9 - int(single_class['Length']))
         else:
             period = random.randrange(0, 10 - int(single_class['Length']))

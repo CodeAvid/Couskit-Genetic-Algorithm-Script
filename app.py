@@ -6,8 +6,7 @@ from algorithm import evolutionary_algorithm
 app = Flask(__name__)
 
 
-def format_timetable(timetable):
-    days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+def format_timetable(timetable, days):
     timetable_data = []
     for period in timetable:
         startHour = (period["AssignedTime"] % 9) + 9
@@ -52,8 +51,9 @@ def preformat_timetable(timetable):
 
 
 def timetable_callback(timetable_data, api_url="https://tbe-node-deploy.herokuapp.com/timetable"):
+    days = timetable_data["selectedDay"]
     timetable = preformat_timetable(timetable_data)
-    timetable = evolutionary_algorithm(timetable, api_url)
+    timetable = evolutionary_algorithm(timetable, api_url, days=days)
     timetable = format_timetable(timetable)
     r = requests.get(api_url, json=timetable, headers={
                      "Content-Type": "application/json"}, params={"current_progress": 5000, "total_progress": 5000})
