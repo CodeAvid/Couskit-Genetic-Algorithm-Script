@@ -24,11 +24,11 @@ def evolutionary_algorithm(data, api_url, days, timetable_id, max_generations=50
             if j % 200 == 0:
                 # print('Iteration', j, 'cost', cost_function(chromosome))
                 requests.get(api_url, params={
-                             "current_progress": j // 2, "total_progress": max_generations - 1, "Timetable-id": timetable_id})
+                             "current_progress": j // 2, "total_progress": max_generations - 1, "timetable-id": timetable_id})
 
         # print('Run', i + 1, 'cost', cost_function(chromosome), 'chromosome', chromosome)
         requests.get(api_url, params={
-                     "current_progress": max_generations // 2, "total_progress": max_generations - 1, "Timetable-id": timetable_id})
+                     "current_progress": max_generations // 2, "total_progress": max_generations - 1, "timetable-id": timetable_id})
         if best_timetable is None or cost_function2(chromosome, days=days) <= cost_function2(best_timetable, days=days):
             best_timetable = deepcopy(chromosome)
 
@@ -43,7 +43,7 @@ def evolutionary_algorithm(data, api_url, days, timetable_id, max_generations=50
         if j % 200 == 0:
             # print('Iteration', j, 'cost', cost_function2(chromosome))
             requests.get(api_url, params={"current_progress": (
-                j // 6) + (max_generations // 2), "total_progress": max_generations - 1, "Timetable-id": timetable_id})
+                j // 6) + (max_generations // 2), "total_progress": max_generations - 1, "timetable-id": timetable_id})
 
     # print('Run', 'cost', cost_function2(chromosome), 'chromosome', chromosome)
     # dt.write_data(chromosome[0], output_file)
