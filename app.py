@@ -53,7 +53,8 @@ def preformat_timetable(timetable):
 def timetable_callback(timetable_data, api_url="https://tbe-node-deploy.herokuapp.com/timetable"):
     days = timetable_data["selectedDay"]
     timetable = preformat_timetable(timetable_data)
-    timetable = evolutionary_algorithm(timetable, api_url, days=days, timetable_data["timetable-id"])
+    timetable = evolutionary_algorithm(
+        timetable, api_url, days=days, timetable_id=timetable_data["timetable-id"])
     timetable = format_timetable(timetable, days=days)
     timetable["timetable-name"] = timetable_data["timetable-name"]
     timetable["academic-section"] = timetable_data["academic-section"]
