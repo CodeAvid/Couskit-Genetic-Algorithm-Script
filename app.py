@@ -54,13 +54,13 @@ def timetable_callback(timetable_data, api_url="https://tbe-node-deploy.herokuap
     days = timetable_data["selectedDay"]
     timetable = preformat_timetable(timetable_data)
     timetable = evolutionary_algorithm(
-        timetable, api_url, days=days, timetable_id=timetable_data["timetable-id"])
+        timetable, api_url, days=days, timetable_id=timetable_data["timetableId"])
     timetable = format_timetable(timetable, days=days)
-    timetable["timetable-name"] = timetable_data["timetable-name"]
-    timetable["academic-section"] = timetable_data["academic-section"]
-    timetable["Timetable-id"] = timetable_data["timetable-id"]
+    timetable["timetableName"] = timetable_data["timetableName"]
+    timetable["academicSession"] = timetable_data["academicSession"]
+    timetable["timetableId"] = timetable_data["timetableId"]
     r = requests.get(api_url, json=timetable, headers={"Content-Type": "application/json"}, params={
-                     "current_progress": 5000, "total_progress": 5000, "timetable-id": timetable_data["timetable-id"]})
+                     "current_progress": 5000, "total_progress": 5000, "timetableId": timetable_data["timetableId"]})
 
 
 @app.route("/")
