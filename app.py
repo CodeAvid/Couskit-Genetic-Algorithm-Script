@@ -53,10 +53,10 @@ def preformat_timetable(timetable):
 
 def timetable_callback(timetable_data, api_url="https://tbe-node-deploy.herokuapp.com/timetable"):
     timetable = preformat_timetable(timetable_data)
-    timetable = evolutionary_algorithm(timetable)
+    timetable = evolutionary_algorithm(timetable, api_url)
     timetable = format_timetable(timetable)
     r = requests.get(api_url, json=timetable, headers={
-                     "Content-Type": "application/json"})
+                     "Content-Type": "application/json"}, params={"current_progress": 5000, "total_progress": 5000})
 
 
 @app.route("/")
