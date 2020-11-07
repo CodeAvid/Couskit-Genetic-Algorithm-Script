@@ -27,6 +27,8 @@ def evolutionary_algorithm(data, api_url, max_generations=5001, num_runs=1):
                              "current_progress": j // 2, "total_progress": max_generations - 1})
 
         # print('Run', i + 1, 'cost', cost_function(chromosome), 'chromosome', chromosome)
+        requests.get(api_url, params={
+                     "current_progress": max_generations // 2, "total_progress": max_generations - 1})
         if best_timetable is None or cost_function2(chromosome) <= cost_function2(best_timetable):
             best_timetable = deepcopy(chromosome)
 

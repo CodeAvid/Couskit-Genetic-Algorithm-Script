@@ -71,7 +71,7 @@ def generate():
         if timetable_data == None:
             raise Exception()
     except:
-        return {"success": False, "message": "the timetable data is missing"}, 400
+        return jsonify({"success": False, "message": "the timetable data is missing"}), 400
     valid = True
     if None in [timetable_data.get("classroom"), timetable_data.get("courses"), timetable_data.get("selectedDay")]:
         valid = False
@@ -105,11 +105,16 @@ def generate():
                 valid = False
                 break
     if not valid:
-        return {"success": False, "message": "the timetable data is not correctly formatted"}, 422
+        return jsonify({"success": False, "message": "the timetable data is not correctly formatted"}), 422
 
     thread = threading.Thread(target=timetable_callback, args=[timetable_data])
     thread.start()
-    return {"success": True, "message": "the timetable is being generated"}, 202
+    return jsonify({
+        "success": True,
+        "message": "the timetable is being generated",
+        "current_progress": 0,
+        "total_progress": 5000
+    }), 202
 
 
 if __name__ == "__main__":
