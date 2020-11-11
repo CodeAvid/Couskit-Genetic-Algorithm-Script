@@ -31,7 +31,7 @@ def preformat_timetable(timetable):
             "Subject": j["name"],
             "Type": "Theory" if j["type"] == "theory" else "Practical",
             "Professor": j["lecturer"],
-            "Groups": [f"{i}"],
+            "Groups": ["class"],
             "AllowedClassrooms": [i for i in timetable["classroom"] if timetable["classroom"][i]["capacity"] >= j["students"]]
         }
         if j["unit"] in [1, 2]:
