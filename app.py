@@ -6,12 +6,16 @@ from algorithm import evolutionary_algorithm
 app = Flask(__name__)
 
 
-def format_timetable(timetable, days):
-    timetable_data = []
+def format_timetable(timetable, timetable_data, days):
+    course_codes = {}
+    for i in timetable_data["courses"]:
+        course_codes[i["code"]] = i["name"]
+    new_timetable_data = []
     for period in timetable:
         startHour = (period["AssignedTime"] % 9) + 9
         d = {
-            "name": period["Subject"],
+            "code": period["Subject"],
+            "name": course_codes[period["Subject"]],
             "lecturer": period["Professor"],
             "type": "theory" if period["Type"] == "Theory" else "lab",
             "assignedDay": days[period["AssignedTime"] // 9],
@@ -19,20 +23,20 @@ def format_timetable(timetable, days):
             "venue": period["AssignedClassroom"],
             "endHour": startHour + int(period["Length"])
         }
-        timetable_data.append(d)
+        new_timetable_data.append(d)
 
-    return {"courses": timetable_data}
+    return {"courses": new_timetable_data}
 
 
 def preformat_timetable(timetable):
     classes = []
     for i, j in enumerate(timetable["courses"]):
         class_data = {
-            "Subject": j["name"],
+            "Subject": j["code"],
             "Type": "Theory" if j["type"] == "theory" else "Practical",
             "Professor": j["lecturer"],
             "Groups": ["class"],
-            "AllowedClassrooms": [i for i in timetable["classroom"] if timetable["classroom"][i]["capacity"] >= j["students"]]
+            "AllowedClassrooms": [k for k in timetable["classroom"] if timetable["classroom"][k]["capacity"] >= j["students"]]
         }
         if j["unit"] in [1, 2]:
             class_data["Length"] = str(j["unit"])
@@ -55,7 +59,7 @@ def timetable_callback(timetable_data, api_url="https://tbe-node-deploy.herokuap
     timetable = preformat_timetable(timetable_data)
     timetable = evolutionary_algorithm(
         timetable, api_url, days=days, timetable_id=timetable_data["timetableId"])
-    timetable = format_timetable(timetable, days=days)
+    timetable = format_timetable(timetable, timetable_data, days=days)
     timetable["timetableName"] = timetable_data["timetableName"]
     timetable["academicSession"] = timetable_data["academicSession"]
     timetable["timetableId"] = timetable_data["timetableId"]
